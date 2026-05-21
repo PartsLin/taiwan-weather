@@ -132,6 +132,22 @@ class SetupWindow:
         self.root.after(0, _do)
 
 
+# ── 串流執行並即時顯示輸出 ───────────────────────────────
+def _stream(cmd: str, cwd: Path, win: "SetupWindow") -> bool:
+    proc = subprocess.Popen(
+        cmd, shell=True, cwd=str(cwd),
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        text=True, encoding="utf-8", errors="replace",
+        creationflags=CREATE_NO_WINDOW,
+    )
+    for line in proc.stdout:
+        line = line.rstrip()
+        if line:
+            win.log(f"    {line[:80]}")
+    proc.wait()
+    return proc.returncode == 0
+
+
 # ── 安裝流程（背景執行緒）────────────────────────────────
 def setup(win: SetupWindow) -> list | None:
     # 1. Python
@@ -178,19 +194,13 @@ def setup(win: SetupWindow) -> list | None:
             win.log("  Node.js 已安裝，請重新執行程式以繼續。")
             win.show_error("Node.js 安裝完成。\n請關閉此視窗並重新開啟 taiwan-weather.exe。")
             return None
-        win.log("  npm install…")
-        r = subprocess.run(["npm", "install"], cwd=str(REACT_DIR),
-                           capture_output=True, text=True,
-                           creationflags=CREATE_NO_WINDOW)
-        if r.returncode != 0:
-            win.show_error("npm install 失敗：\n" + r.stderr[-400:])
+        win.log("  npm install... (首次需要幾分鐘，請稍候)")
+        if not _stream("npm install", REACT_DIR, win):
+            win.show_error("npm install 失敗，請查看上方錯誤訊息。")
             return None
-        win.log("  npm run build…")
-        r = subprocess.run(["npm", "run", "build"], cwd=str(REACT_DIR),
-                           capture_output=True, text=True,
-                           creationflags=CREATE_NO_WINDOW)
-        if r.returncode != 0:
-            win.show_error("React 建置失敗：\n" + r.stderr[-400:])
+        win.log("  npm run build...")
+        if not _stream("npm run build", REACT_DIR, win):
+            win.show_error("React 建置失敗，請查看上方錯誤訊息。")
             return None
         win.log("  前端建置完成 ✓")
     else:
