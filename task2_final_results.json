@@ -1,0 +1,200 @@
+{
+  "466850": {
+    "name": "五分山雷達站",
+    "county": "新北市",
+    "ok": false,
+    "detail": "empty data"
+  },
+  "466881": {
+    "name": "新北",
+    "county": "新北市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "466900": {
+    "name": "淡水",
+    "county": "新北市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "466910": {
+    "name": "鞍部",
+    "county": "臺北市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "466920": {
+    "name": "臺北",
+    "county": "臺北市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "466930": {
+    "name": "竹子湖",
+    "county": "臺北市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "466940": {
+    "name": "基隆",
+    "county": "基隆市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "466950": {
+    "name": "彭佳嶼",
+    "county": "基隆市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "466990": {
+    "name": "花蓮",
+    "county": "花蓮縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467050": {
+    "name": "新屋",
+    "county": "桃園市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467080": {
+    "name": "宜蘭",
+    "county": "宜蘭縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467110": {
+    "name": "金門",
+    "county": "金門縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467270": {
+    "name": "田中",
+    "county": "彰化縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467280": {
+    "name": "後龍",
+    "county": "苗栗縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467290": {
+    "name": "古坑",
+    "county": "雲林縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467300": {
+    "name": "東吉島",
+    "county": "澎湖縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467350": {
+    "name": "澎湖",
+    "county": "澎湖縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467410": {
+    "name": "臺南",
+    "county": "臺南市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467420": {
+    "name": "永康",
+    "county": "臺南市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467441": {
+    "name": "高雄",
+    "county": "高雄市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467480": {
+    "name": "嘉義",
+    "county": "嘉義市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467490": {
+    "name": "臺中",
+    "county": "臺中市",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467530": {
+    "name": "阿里山",
+    "county": "嘉義縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467540": {
+    "name": "大武",
+    "county": "臺東縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467550": {
+    "name": "玉山",
+    "county": "南投縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467571": {
+    "name": "新竹",
+    "county": "新竹縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467590": {
+    "name": "恆春",
+    "county": "屏東縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467610": {
+    "name": "成功",
+    "county": "臺東縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467620": {
+    "name": "蘭嶼",
+    "county": "臺東縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467650": {
+    "name": "日月潭",
+    "county": "南投縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467660": {
+    "name": "臺東",
+    "county": "臺東縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  },
+  "467790": {
+    "name": "墾丁雷達站",
+    "county": "屏東縣",
+    "ok": false,
+    "detail": "empty data"
+  },
+  "467990": {
+    "name": "馬祖",
+    "county": "連江縣",
+    "ok": true,
+    "detail": "data=720hrs"
+  }
+}

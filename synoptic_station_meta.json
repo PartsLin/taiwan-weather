@@ -1,0 +1,248 @@
+{
+  "466850": {
+    "name": "五分山雷達站",
+    "county": "新北市",
+    "name_en": "WUFENSHAN",
+    "status": "current"
+  },
+  "466881": {
+    "name": "新北",
+    "county": "新北市",
+    "name_en": "New Taipei",
+    "status": "current"
+  },
+  "466900": {
+    "name": "淡水",
+    "county": "新北市",
+    "name_en": "TAMSUI",
+    "status": "current"
+  },
+  "466910": {
+    "name": "鞍部",
+    "county": "臺北市",
+    "name_en": "ANBU",
+    "status": "current"
+  },
+  "466920": {
+    "name": "臺北",
+    "county": "臺北市",
+    "name_en": "TAIPEI",
+    "status": "current"
+  },
+  "466930": {
+    "name": "竹子湖",
+    "county": "臺北市",
+    "name_en": "ZHUZIHU",
+    "status": "current"
+  },
+  "466940": {
+    "name": "基隆",
+    "county": "基隆市",
+    "name_en": "KEELUNG",
+    "status": "current"
+  },
+  "466950": {
+    "name": "彭佳嶼",
+    "county": "基隆市",
+    "name_en": "PENGJIAYU",
+    "status": "current"
+  },
+  "466990": {
+    "name": "花蓮",
+    "county": "花蓮縣",
+    "name_en": "HUALIEN",
+    "status": "current"
+  },
+  "467050": {
+    "name": "新屋",
+    "county": "桃園市",
+    "name_en": "XINWU",
+    "status": "current"
+  },
+  "467080": {
+    "name": "宜蘭",
+    "county": "宜蘭縣",
+    "name_en": "YILAN",
+    "status": "current"
+  },
+  "467110": {
+    "name": "金門",
+    "county": "金門縣",
+    "name_en": "KINMEN",
+    "status": "current"
+  },
+  "467270": {
+    "name": "田中",
+    "county": "彰化縣",
+    "name_en": "TianZhong",
+    "status": "current"
+  },
+  "467280": {
+    "name": "後龍",
+    "county": "苗栗縣",
+    "name_en": "Houlong",
+    "status": "current"
+  },
+  "467290": {
+    "name": "古坑",
+    "county": "雲林縣",
+    "name_en": "Gukeng",
+    "status": "current"
+  },
+  "467300": {
+    "name": "東吉島",
+    "county": "澎湖縣",
+    "name_en": "DONGJIDAO",
+    "status": "current"
+  },
+  "467350": {
+    "name": "澎湖",
+    "county": "澎湖縣",
+    "name_en": "PENGHU",
+    "status": "current"
+  },
+  "467410": {
+    "name": "臺南",
+    "county": "臺南市",
+    "name_en": "TAINAN",
+    "status": "current"
+  },
+  "467420": {
+    "name": "永康",
+    "county": "臺南市",
+    "name_en": "YONGKANG",
+    "status": "current"
+  },
+  "467441": {
+    "name": "高雄",
+    "county": "高雄市",
+    "name_en": "Kaohsiung",
+    "status": "current"
+  },
+  "467480": {
+    "name": "嘉義",
+    "county": "嘉義市",
+    "name_en": "CHIAYI",
+    "status": "current"
+  },
+  "467490": {
+    "name": "臺中",
+    "county": "臺中市",
+    "name_en": "TAICHUNG",
+    "status": "current"
+  },
+  "467530": {
+    "name": "阿里山",
+    "county": "嘉義縣",
+    "name_en": "ALISHAN",
+    "status": "current"
+  },
+  "467540": {
+    "name": "大武",
+    "county": "臺東縣",
+    "name_en": "DAWU",
+    "status": "current"
+  },
+  "467550": {
+    "name": "玉山",
+    "county": "南投縣",
+    "name_en": "YUSHAN",
+    "status": "current"
+  },
+  "467571": {
+    "name": "新竹",
+    "county": "新竹縣",
+    "name_en": "HSINCHU",
+    "status": "current"
+  },
+  "467590": {
+    "name": "恆春",
+    "county": "屏東縣",
+    "name_en": "HENGCHUN",
+    "status": "current"
+  },
+  "467610": {
+    "name": "成功",
+    "county": "臺東縣",
+    "name_en": "CHENGGONG",
+    "status": "current"
+  },
+  "467620": {
+    "name": "蘭嶼",
+    "county": "臺東縣",
+    "name_en": "LANYU",
+    "status": "current"
+  },
+  "467650": {
+    "name": "日月潭",
+    "county": "南投縣",
+    "name_en": "SUN MOON LAKE",
+    "status": "current"
+  },
+  "467660": {
+    "name": "臺東",
+    "county": "臺東縣",
+    "name_en": "TAITUNG",
+    "status": "current"
+  },
+  "467790": {
+    "name": "墾丁雷達站",
+    "county": "屏東縣",
+    "name_en": "KENTING",
+    "status": "current"
+  },
+  "467990": {
+    "name": "馬祖",
+    "county": "連江縣",
+    "name_en": "MATSU",
+    "status": "current"
+  },
+  "466880": {
+    "name": "板橋",
+    "county": "新北市",
+    "status": "retired",
+    "new_id": "466881"
+  },
+  "466921": {
+    "name": "臺北(師院)",
+    "county": "臺北市",
+    "status": "retired",
+    "new_id": ""
+  },
+  "467060": {
+    "name": "蘇澳",
+    "county": "宜蘭縣",
+    "status": "retired",
+    "new_id": "C0UB10"
+  },
+  "467411": {
+    "name": "臺南(永康)",
+    "county": "臺南市",
+    "status": "retired",
+    "new_id": ""
+  },
+  "467440": {
+    "name": "高雄",
+    "county": "高雄市",
+    "status": "retired",
+    "new_id": "467441"
+  },
+  "467570": {
+    "name": "新竹",
+    "county": "新竹市",
+    "status": "retired",
+    "new_id": ""
+  },
+  "467770": {
+    "name": "梧棲",
+    "county": "臺中市",
+    "status": "retired",
+    "new_id": "C0FA30"
+  },
+  "467780": {
+    "name": "七股",
+    "county": "臺南市",
+    "status": "retired",
+    "new_id": ""
+  }
+}

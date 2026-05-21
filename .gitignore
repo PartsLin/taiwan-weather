@@ -1,0 +1,35 @@
+# Database
+weather-api/weather.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Node
+temperature-dashboard/node_modules/
+temperature-dashboard/build/
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Claude internal
+.claude/
+
+# PyInstaller output
+launcher/dist/
+launcher/build/
+launcher/*.spec.log

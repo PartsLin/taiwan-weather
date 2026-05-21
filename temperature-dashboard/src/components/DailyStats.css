@@ -1,0 +1,151 @@
+.daily-stats-container {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.daily-stats-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.calendar {
+  width: 100%;
+}
+
+.week-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.week-label {
+  text-align: center;
+  font-weight: bold;
+  color: #667eea;
+  font-size: 14px;
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  font-size: 13px;
+}
+
+.calendar-day.empty {
+  cursor: default;
+  background: #f9f9f9;
+  border: 2px dashed #ddd;
+  opacity: 0.3;
+}
+
+.calendar-day:not(.empty):hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+
+.calendar-day.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  font-weight: bold;
+}
+
+.day-number {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.calendar-day.selected .day-number {
+  color: white;
+}
+
+.weather-icon {
+  font-size: 24px;
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.temp-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: 6px;
+  gap: 8px;
+}
+
+.calendar-day.selected .temp-info {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.max-temp,
+.min-temp {
+  flex: 1;
+  font-weight: 700;
+  font-size: 15px;
+  color: #e74c3c;
+}
+
+.min-temp {
+  color: #3498db;
+  border-left: 1px solid #ddd;
+  padding-left: 4px;
+}
+
+.calendar-day.selected .min-temp {
+  border-left-color: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-day.selected .max-temp,
+.calendar-day.selected .min-temp {
+  color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .calendar-day {
+    min-height: 80px;
+    font-size: 10px;
+  }
+
+  .day-number {
+    font-size: 12px;
+  }
+
+  .week-label {
+    font-size: 12px;
+  }
+}
+

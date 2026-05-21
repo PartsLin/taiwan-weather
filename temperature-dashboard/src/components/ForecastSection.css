@@ -1,0 +1,100 @@
+.forecast-container {
+  background: linear-gradient(135deg, #fff9e6 0%, #fffdf5 100%);
+  border: 1px solid #f0d070;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(245, 159, 0, 0.1);
+}
+
+.forecast-container h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #744210;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.forecast-location {
+  font-size: 14px;
+  font-weight: 500;
+  color: #92400e;
+  background: #fef3c7;
+  border-radius: 20px;
+  padding: 2px 12px;
+}
+
+.forecast-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.forecast-card {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #fde68a;
+  transition: transform 0.15s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-2px);
+}
+
+.forecast-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 8px;
+}
+
+.forecast-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.forecast-wx {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 12px;
+  min-height: 18px;
+}
+
+.forecast-temps {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.forecast-max {
+  font-size: 18px;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.forecast-min {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.forecast-pop {
+  font-size: 13px;
+  color: #4a9eff;
+  font-weight: 500;
+}
+
+.forecast-chart {
+  background: white;
+  border-radius: 10px;
+  padding: 12px 8px 4px;
+  border: 1px solid #fde68a;
+}
