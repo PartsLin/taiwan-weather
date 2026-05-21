@@ -4,6 +4,8 @@
 """
 
 import asyncio
+import os
+import sys
 from contextlib import asynccontextmanager
 from datetime import datetime
 
@@ -82,6 +84,10 @@ _forecast_cache:  dict = {}  # f"{county}/{district}" → {"data": ..., "cached_
 _districts_cache: dict = {}  # county → list[str]
 _county_sync:     dict = {}  # station_id → {"status": ..., "message": ...}
 
+# React build 目錄（dev 時在 ../temperature-dashboard/build/）
+_BUILD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "..", "temperature-dashboard", "build")
+
 scheduler = AsyncIOScheduler(timezone="Asia/Taipei")
 
 _sync: dict = {
@@ -148,6 +154,31 @@ async def _startup_sync(county: str = "臺北市"):
     except Exception as e:
         _sync = {"status": "error", "message": f"更新失敗：{e}",
                  "target_year": None, "target_month": None}
+
+
+async def _update_all_counties():
+    """更新所有已有資料的縣市至本月。"""
+    now = datetime.now()
+    for county, info in COUNTY_STATIONS.items():
+        station_id = info["station_id"]
+        stn_type   = info["stn_type"]
+        status = get_station_status(station_id)
+        if not status.get("total_records"):
+            continue
+        latest = status.get("latest_date")
+        since_y = int(latest[:4]) if latest else now.year
+        since_m = int(latest[5:7]) if latest else now.month
+        y, m = since_y, since_m
+        while (y, m) <= (now.year, now.month):
+            try:
+                result = await fetch_month(station_id=station_id, year=y, month=m,
+                                           stn_type=stn_type)
+                print(f"[update-all] {county} {y}/{m:02d} → {result['fetched']} 筆")
+            except Exception as e:
+                print(f"[update-all] {county} {y}/{m:02d} 失敗: {e}")
+            m += 1
+            if m > 12:
+                m, y = 1, y + 1
 
 
 async def _fetch_county_all(county: str):
@@ -389,6 +420,24 @@ async def status():
 @app.get("/api/sync-status", summary="啟動同步進度")
 async def get_sync_status():
     return _sync
+
+
+@app.post("/api/update-all", summary="更新所有已有資料的縣市至本月")
+async def update_all(background_tasks: BackgroundTasks):
+    background_tasks.add_task(_update_all_counties)
+    return {"message": "已排程更新所有縣市", "status": "queued"}
+
+
+@app.post("/api/refresh-forecast", summary="清除預報快取（下次開頁面自動重抓）")
+async def refresh_forecast_cache():
+    _forecast_cache.clear()
+    return {"message": "預報快取已清除", "status": "ok"}
+
+
+# ── 前端靜態服務 ────────────────────────────────────────────
+if os.path.isdir(_BUILD_DIR):
+    from fastapi.staticfiles import StaticFiles
+    app.mount("/", StaticFiles(directory=_BUILD_DIR, html=True), name="frontend")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,13 @@
 import sqlite3
+import sys
 from contextlib import contextmanager
 from pathlib import Path
 
-DB_PATH = Path(__file__).parent / "weather.db"
+DB_PATH = (
+    Path(sys.executable).parent / "weather.db"
+    if getattr(sys, "frozen", False)
+    else Path(__file__).parent / "weather.db"
+)
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS forecasts (
