@@ -1,0 +1,59 @@
+name: Build & Release
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: temperature-dashboard/package-lock.json
+
+      - name: Install Python deps
+        run: pip install pyinstaller pillow --quiet
+
+      - name: Build React
+        working-directory: temperature-dashboard
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build launcher exe
+        working-directory: launcher
+        run: pyinstaller weather.spec --clean --noconfirm
+
+      - name: Package release zip
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory release -Force | Out-Null
+          Copy-Item "launcher\dist\taiwan-weather.exe" "release\"
+          Copy-Item -Recurse "weather-api" "release\weather-api"
+          New-Item -ItemType Directory "release\temperature-dashboard\build" -Force | Out-Null
+          Copy-Item -Recurse "temperature-dashboard\build\*" "release\temperature-dashboard\build\"
+          Compress-Archive -Path "release\*" -DestinationPath "taiwan-weather.zip" -Force
+
+      - name: Upload to GitHub Releases
+        uses: ncipollo/release-action@v1
+        with:
+          tag: latest
+          name: Latest Build
+          prerelease: true
+          allowUpdates: true
+          removeArtifacts: true
+          artifacts: taiwan-weather.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
