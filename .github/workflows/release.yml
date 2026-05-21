@@ -30,7 +30,7 @@ jobs:
       - name: Build React
         working-directory: temperature-dashboard
         run: |
-          npm ci
+          npm install --no-audit
           npm run build
 
       - name: Build launcher exe
